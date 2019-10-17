@@ -89,6 +89,11 @@
     [_base disableJavscriptAlertBoxSafetyTimeout];
 }
 
+#pragma mark - Sogou
+- (void)setHandler:(WVJBHandler)handler {
+    _base.messageHandler = handler;
+}
+
 
 /* Platform agnostic internals
  *****************************/

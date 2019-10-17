@@ -190,7 +190,10 @@
     return NULL;
 }
 
-
+#pragma mark - Sogou
+- (void)setHandler:(WVJBHandler)handler {
+    _base.messageHandler = handler;
+}
 
 @end
 

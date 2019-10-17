@@ -98,7 +98,14 @@ static int logMaxLength = 500;
                 };
             }
             
-            WVJBHandler handler = self.messageHandlers[message[@"handlerName"]];
+//            WVJBHandler handler = self.messageHandlers[message[@"handlerName"]];
+            // custom sogou
+            WVJBHandler handler;
+            if (message[@"handlerName"]) {
+                handler = self.messageHandlers[message[@"handlerName"]];
+            } else {
+                handler = self.messageHandler;
+            }
             
             if (!handler) {
                 NSLog(@"WVJBNoHandlerException, No handler for message from JS: %@", message);

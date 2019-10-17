@@ -30,7 +30,8 @@ NSString * WebViewJavascriptBridge_js() {
 		callHandler: callHandler,
 		disableJavscriptAlertBoxSafetyTimeout: disableJavscriptAlertBoxSafetyTimeout,
 		_fetchQueue: _fetchQueue,
-		_handleMessageFromObjC: _handleMessageFromObjC
+		_handleMessageFromObjC: _handleMessageFromObjC,
+        send: send  // custom sogou
 	};
 
 	var messagingIframe;
@@ -58,6 +59,10 @@ NSString * WebViewJavascriptBridge_js() {
 	function disableJavscriptAlertBoxSafetyTimeout() {
 		dispatchMessagesWithTimeoutSafety = false;
 	}
+    // custom sogou
+    function send(data, responseCallback) {
+        _doSend({ data:data }, responseCallback)
+    }
 	
 	function _doSend(message, responseCallback) {
 		if (responseCallback) {

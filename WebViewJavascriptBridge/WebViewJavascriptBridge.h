@@ -47,4 +47,7 @@
 - (void)setWebViewDelegate:(id)webViewDelegate;
 - (void)disableJavscriptAlertBoxSafetyTimeout;
 
+#pragma mark - Sogou
+- (void)setHandler:(WVJBHandler)handler;
+
 @end
